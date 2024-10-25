@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "start": "bun run build && ./dist/bin/liteproxy-bun-linux-x64-modern",
+    "build": "bun run build:client & bun run build:server",
+    "build:dist": "bun run build",
+    "build:client": "bun run ./build/build-client.ts",
+    "build:server": "bun run ./build/build-server.ts",
+    "dev": "bun run dev:client & bun run dev:server",
+    "dev:client": "bun run build:client && chokidar './src/pages/**/*.tsx' -c 'bun run build:client'",
+    "dev:server": "bun run --hot ./src/index.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/bun": "^1.1.11",
+    "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "chokidar-cli": "^3.0.0",
+    "eslint": "^9.13.0",
+    "prettier": "^3.3.3",
+    "prettier-eslint": "^16.3.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0"
+  },
+  "dependencies": {
+    "preact": "^10.24.3"
+  }
+}
